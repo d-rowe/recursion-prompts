@@ -31,7 +31,7 @@ var arraySum = function(array) {
   
   let total = 0;
   array.forEach(item => {
-    total += arraySum(item)
+    total += arraySum(item);
   })
   return total;
 };
