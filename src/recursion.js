@@ -60,7 +60,26 @@ var sumBelow = function(n) {
 
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
-var range = function(x, y) {};
+var range = function(x, y) {
+  let start = x;
+  let end = y;
+  let reverse = false;
+  if (x > y) {
+    start = y;
+    end = x;
+    reverse = true;
+  }
+
+  let num = start + 1;
+  if (end - start < 2) return [];
+  if (end - start === 2) return [num];
+
+  if (reverse) {
+    return range(end, num).concat(num);
+  } else {
+    return [num].concat(range(num, end));
+  }
+};
 
 // 7. Compute the exponent of a number.
 // The exponent of a number says how many times the base number is used as a factor.
