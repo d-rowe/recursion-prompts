@@ -137,11 +137,9 @@ var modulo = function(x, y) {
   if (absY > absX) return x;
 
   let nextX = x > 0 ? x - absY : x + absY;
-  
+
   return modulo(nextX, y);
 };
-
-console.log(modulo(-275, -274));
 
 // 12. Write a function that multiplies two numbers without using the * operator or
 // Math methods.
