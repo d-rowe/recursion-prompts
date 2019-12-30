@@ -115,7 +115,13 @@ var reverse = function(string) {
 };
 
 // 10. Write a function that determines if a string is a palindrome.
-var palindrome = function(string) {};
+var palindrome = function(string) {
+  if (string.length <= 1) return true;
+  let newStr = string.toLowerCase().trim();
+  if (newStr.slice(0, 1) !== newStr.slice(-1)) return false;
+
+  return palindrome(newStr.slice(1, -1));
+};
 
 // 11. Write a function that returns the remainder of x divided by y without using the
 // modulo (%) operator.
